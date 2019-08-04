@@ -1,0 +1,252 @@
+{
+  "ConsoleAssert": {
+    "prefix": "ca",
+    "body": "console.assert(${1:condition}, ${2:message})",
+    "description": "Writes an error message to the console if the assertion is false. If the assertion is true, nothing happens."
+  },
+  "ConsoleClear": {
+    "prefix": "ccl",
+    "body": "console.clear()",
+    "description": "Clears the console."
+  },
+  "ConsoleCount": {
+    "prefix": "cc",
+    "body": "console.count(${1:label})",
+    "description": "Logs the number of times that this particular call to count() has been called. This function takes an optional argument label."
+  },
+  "ConsoleCountReset": {
+    "prefix": "ccr",
+    "body": "console.countReset(${1:label})",
+    "description": "Resets the counter. This function takes an optional argument label."
+  },
+  "ConsoleDebug": {
+    "prefix": "cdb",
+    "body": "console.debug(${1:message})",
+    "description": "The Console method debug() outputs a message to the web console at the \"debug\" log level. The message is only displayed to the user if the console is configured to display debug output."
+  },
+  "ConsoleDir": {
+    "prefix": "cd",
+    "body": "console.dir(${1:value})",
+    "description": "The Console method dir() displays an interactive list of the properties of the specified JavaScript object. The output is presented as a hierarchical listing with disclosure triangles that let you see the contents of child objects."
+  },
+  "ConsoleDirXML": {
+    "prefix": "cdx",
+    "body": "console.dirxml(${1:object})",
+    "description": "Displays an interactive tree of the descendant elements of the specified XML/HTML element. If it is not possible to display as an element the JavaScript Object view is shown instead. The output is presented as a hierarchical listing of expandable nodes that let you see the contents of child nodes."
+  },
+  "ConsoleError": {
+    "prefix": "ce",
+    "body": "console.error(${1:message})",
+    "description": "Outputs an error message to the Web Console."
+  },
+  "ConsoleGroup": {
+    "prefix": "cg",
+    "body": "console.group(${1:groupTitle})",
+    "description": "Creates a new inline group in the Web Console log. This indents following console messages by an additional level, until console.groupEnd() is called."
+  },
+  "ConsoleGroupCollapsed": {
+    "prefix": "cgc",
+    "body": "console.groupCollapsed(${1:groupTitle})",
+    "description": "Creates a new inline group in the Web Console. Unlike console.group(), however, the new group is created collapsed. The user will need to use the disclosure button next to it to expand it, revealing the entries created in the group."
+  },
+  "ConsoleGroupEnd": {
+    "prefix": "cge",
+    "body": "console.groupEnd()",
+    "description": "Exits the current inline group in the Web Console. See Using groups in the console in the console documentation for details and examples."
+  },
+  "ConsoleInfo": {
+    "prefix": "ci",
+    "body": "console.info(${1:message})",
+    "description": "Outputs an informational message to the Web Console. In Firefox and Chrome, a small \"i\" icon is displayed next to these items in the Web Console's log."
+  },
+  "ConsoleLog": {
+    "prefix": "cl",
+    "body": "console.log(${1:message})",
+    "description": "The Console method log() outputs a message to the web console. The message may be a single string (with optional substitution values), or it may be any one or more JavaScript objects."
+  },
+  "ConsoleTable": {
+    "prefix": "ctb",
+    "body": "console.table(${1:tabularData})",
+    "description": "Displays tabular data as a table."
+  },
+  "ConsoleTime": {
+    "prefix": "ct",
+    "body": "console.time(${1:label})",
+    "description": "Starts a timer you can use to track how long an operation takes. You give each timer a unique name, and may have up to 10,000 timers running on a given page. When you call console.timeEnd() with the same name, the browser will output the time, in milliseconds, that elapsed since the timer was started."
+  },
+  "ConsoleTimeEnd": {
+    "prefix": "cte",
+    "body": "console.timeEnd(${1:label})",
+    "description": "Stops a timer that was previously started by calling \"console.time()\"."
+  },
+  "ConsoleTrace": {
+    "prefix": "ctr",
+    "body": "console.trace(${1:message})",
+    "description": "The console interface's trace() method outputs a stack trace to the Web Console."
+  },
+  "ConsoleWarn": {
+    "prefix": "cw",
+    "body": "console.warn(${1:message})",
+    "description": "Outputs a warning message to the Web Console."
+  },
+  "ArrayFrom": {
+    "prefix": "Af",
+    "body": "Array.from(${1:arrayLike}${2:, ${0:mapFn}})",
+    "description": "The \"Array.from()\" method creates a new, shallow-copied Array instance from an array-like or iterable object."
+  },
+  "ArrayIsArray": {
+    "prefix": "Aia",
+    "body": "Array.isArray(${1:value})",
+    "description": "The \"Array.isArray()\" method determines whether the passed value is an Array."
+  },
+  "ArrayOf": {
+    "prefix": "Ao",
+    "body": "Array.of(${1:items})",
+    "description": "The \"Array.of()\" method creates a new Array instance from a variable number of arguments, regardless of number or type of the arguments."
+  },
+  "ArrayConcat": {
+    "prefix": ".concat",
+    "body": ".concat(${1:items})",
+    "description": "The \"concat()\" method s used to merge two or more arrays. This method does not change the existing arrays, but instead returns a new array."
+  },
+  "ArrayCopyWithin": {
+    "prefix": ".copyWithin",
+    "body": ".copyWithin(${1:target}${2:, ${3:start}${4:, ${5:end}}})",
+    "description": "The \"copyWithin()\" method shallow copies part of an array to another location in the same array and returns it without modifying its length."
+  },
+  "ArrayEntries": {
+    "prefix": ".entries",
+    "body": ".entries()",
+    "description": "The \"entries()\" method returns a new Array Iterator object that contains the key/value pairs for each index in the array."
+  },
+  "ArrayEvery": {
+    "prefix": ".every",
+    "body": ".every(${1:(${2:value}${3:, ${4:index}${5:, ${6:array}}}) => {$0\\}})",
+    "description": "The \"every()\" method tests whether all elements in the array pass the test implemented by the provided function. It returns a Boolean value."
+  },
+  "ArrayFill": {
+    "prefix": ".fill",
+    "body": ".fill(${1:target}${2:, ${3:start}${4:, ${5:end}}})",
+    "description": "The \"fill()\" method fills (modifies) all the elements of an array from a start index (default zero) to an end index (default array length) with a static value. It returns the modified array."
+  },
+  "ArrayFilter": {
+    "prefix": ".filter",
+    "body": ".filter(${1:(${2:value}${3:, ${4:index}${5:, ${6:array}}}) => {$0\\}})",
+    "description": "The \"filter()\" method creates a new array with all elements that pass the test implemented by the provided function."
+  },
+  "ArrayFind": {
+    "prefix": ".find",
+    "body": ".find(${1:(${2:value}${3:, ${4:index}${5:, ${6:array}}}) => {$0\\}})",
+    "description": "The \"find()\" method returns the value of the first element in the array that satisfies the provided testing function. Otherwise \"undefined\" is returned."
+  },
+  "ArrayFindIndex": {
+    "prefix": ".findIndex",
+    "body": ".findIndex(${1:(${2:value}${3:, ${4:index}${5:, ${6:array}}}) => {$0\\}})",
+    "description": "The \"findIndex()\" method returns the index of the first element in the array that satisfies the provided testing function. Otherwise, it returns -1, indicating that no element passed the test."
+  },
+  "ArrayFlat": {
+    "prefix": ".flat",
+    "body": ".flat(${1:depth})",
+    "description": "The \"flat()\" method creates a new array with all sub-array elements concatenated into it recursively up to the specified depth."
+  },
+  "ArrayFlatMap": {
+    "prefix": ".flatMap",
+    "body": ".flatMap(${1:(${2:value}${3:, ${4:index}${5:, ${6:array}}}) => {$0\\}})",
+    "description": "The \"flatMap()\" method first maps each element using a mapping function, then flattens the result into a new array. It is identical to a map() followed by a flat() of depth 1, but flatMap() is often quite useful, as merging both into one method is slightly more efficient."
+  },
+  "ArrayForEach": {
+    "prefix": ".forEach",
+    "body": ".forEach(${1:(${2:value}${3:, ${4:index}${5:, ${6:array}}}) => {$0\\}})",
+    "description": "The \"forEach()\" method executes a provided function once for each array element."
+  },
+  "ArrayIncludes": {
+    "prefix": ".includes",
+    "body": ".includes(${3:searchElement}${1:, ${2:fromIndex}})",
+    "description": "The \"includes()\" method determines whether an array includes a certain value among its entries, returning true or false as appropriate."
+  },
+  "ArrayIndexOf": {
+    "prefix": ".indexOf",
+    "body": ".indexOf(${3:searchElement}${1:, ${2:fromIndex}})",
+    "description": "The \"indexOf()\" method returns the first index at which a given element can be found in the array, or -1 if it is not present."
+  },
+  "ArrayJoin": {
+    "prefix": ".join",
+    "body": ".join(${1:separator})",
+    "description": "The \"join()\" method creates and returns a new string by concatenating all of the elements in an array (or an array-like object), separated by commas or a specified separator string. If the array has only one item, then that item will be returned without using the separator."
+  },
+  "ArrayKeys": {
+    "prefix": ".keys",
+    "body": ".keys()",
+    "description": "The \"keys()\" method returns a new Array Iterator object that contains the keys for each index in the array."
+  },
+  "ArrayLastIndexOf": {
+    "prefix": ".lastIndexOf",
+    "body": ".lastIndexOf(${3:searchElement}${1:, ${2:fromIndex}})",
+    "description": "The \"lastIndexOf()\" method returns the last index at which a given element can be found in the array, or -1 if it is not present. The array is searched backwards, starting at fromIndex."
+  },
+  "ArrayMap": {
+    "prefix": ".map",
+    "body": ".map(${1:(${2:value}${3:, ${4:index}${5:, ${6:array}}}) => {$0\\}})",
+    "description": "The \"map()\" method creates a new array with the results of calling a provided function on every element in the calling array."
+  },
+  "ArrayPop": {
+    "prefix": ".pop",
+    "body": ".pop()",
+    "description": "The \"pop()\" method removes the last element from an array and returns that element. This method changes the length of the array."
+  },
+  "ArrayPush": {
+    "prefix": ".push",
+    "body": ".push(${1:value})",
+    "description": "The \"push()\" method removes the last element from an array and returns that element. This method changes the length of the array."
+  },
+  "ArrayReduce": {
+    "prefix": ".reduce",
+    "body": ".reduce(${3:(${4:previousValue}${5:, ${6:currentValue}${7:, ${8:currentIndex}${9:, ${10:array}}}}) => {$0\\}}${1:, ${2:initialValue}})",
+    "description": "The \"reduce()\" method executes a reducer function (that you provide) on each element of the array, resulting in a single output value."
+  },
+  "ArrayReduceRight": {
+    "prefix": ".reduceRight",
+    "body": ".reduceRight(${3:(${4:previousValue}${5:, ${6:currentValue}${7:, ${8:currentIndex}${9:, ${10:array}}}}) => {$0\\}}${1:, ${2:initialValue}})",
+    "description": "The \"reduceRight()\" method applies a function against an accumulator and each value of the array (from right-to-left) to reduce it to a single value."
+  },
+  "ArrayReverse": {
+    "prefix": ".reverse",
+    "body": ".reverse()",
+    "description": "The \"reverse()\" method reverses an array in place. The first array element becomes the last, and the last array element becomes the first."
+  },
+  "ArrayShift": {
+    "prefix": ".shift",
+    "body": ".shift()",
+    "description": "The \"shift()\" method removes the first element from an array and returns that removed element. This method changes the length of the array."
+  },
+  "ArraySlice": {
+    "prefix": ".slice",
+    "body": ".slice(${1:${2:start}${3:, ${4:end}}})",
+    "description": "The \"slice()\" method returns a shallow copy of a portion of an array into a new array object selected from begin to end (end not included) where begin and end represent the index of items in that array. The original array will not be modified."
+  },
+  "ArraySome": {
+    "prefix": ".some",
+    "body": ".some(${1:(${2:value}${3:, ${4:index}${5:, ${6:array}}}) => {$0\\}})",
+    "description": "The \"some()\" method tests whether at least one element in the array passes the test implemented by the provided function. It returns a Boolean value."
+  },
+  "ArraySort": {
+    "prefix": ".sort",
+    "body": ".sort(${1:(${2:a}, ${3:b}) => {$0\\}})",
+    "description": "The \"sort()\" method sorts the elements of an array in place and returns the sorted array. The default sort order is built upon converting the elements into strings, then comparing their sequences of UTF-16 code units values."
+  },
+  "ArraySplice": {
+    "prefix": ".splice",
+    "body": ".splice(${1:start}${2:, ${3:deleteCount}${4:, ${0:items}}})",
+    "description": "The \"splice()\" method changes the contents of an array by removing or replacing existing elements and/or adding new elements in place."
+  },
+  "ArrayUnshift": {
+    "prefix": ".unshift",
+    "body": ".unshift(${0:value})",
+    "description": "The \"unshift()\" method adds one or more elements to the beginning of an array and returns the new length of the array."
+  },
+  "ArrayValues": {
+    "prefix": ".values",
+    "body": ".values()",
+    "description": "The \"values()\" method returns a new Array Iterator object that contains the values for each index in the array."
+  }
+}
