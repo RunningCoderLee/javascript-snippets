@@ -248,5 +248,120 @@
     "prefix": ".values",
     "body": ".values()",
     "description": "The \"values()\" method returns a new Array Iterator object that contains the values for each index in the array."
+  },
+  "ObjectAssign": {
+    "prefix": "Oa",
+    "body": "Object.assign(${1:target}${2:, ${0:sources}})",
+    "description": "The \"Object.assign()\" method is used to copy the values of all enumerable own properties from one or more source objects to a target object. It will return the target object."
+  },
+  "ObjectCreate": {
+    "prefix": "Oc",
+    "body": "Object.create(${1:proto}${2:, {$0\\}})",
+    "description": "The \"Object.create()\" method creates a new object, using an existing object as the prototype of the newly created object."
+  },
+  "ObjectDefineProperties": {
+    "prefix": "Odps",
+    "body": "Object.defineProperties(${1:obj}, {$0})",
+    "description": "The \"Object.defineProperties()\" method creates a new object, using an existing object as the prototype of the newly created object."
+  },
+  "ObjectDefineProperty": {
+    "prefix": "Odp",
+    "body": "Object.defineProperty(${1:obj}, ${2:propertyKey}, {$0})",
+    "description": "The static method \"Object.defineProperty()\" defines a new property directly on an object, or modifies an existing property on an object, and returns the object."
+  },
+  "ObjectEntries": {
+    "prefix": "Oe",
+    "body": "Object.entries(${0:obj})",
+    "description": "The \"Object.entries()\" method returns an array of a given object's own enumerable string-keyed property [key, value] pairs, in the same order as that provided by a for...in loop (the difference being that a for-in loop enumerates properties in the prototype chain as well). The order of the array returned by Object.entries() does not depend on how an object is defined. If there is a need for certain ordering then the array should be sorted first like Object.entries(obj).sort((a, b) => b[0].localeCompare(a[0]));."
+  },
+  "ObjectFreeze": {
+    "prefix": "Of",
+    "body": "Object.freeze(${0:obj})",
+    "description": "The \"Object.freeze()\" method freezes an object. A frozen object can no longer be changed; freezing an object prevents new properties from being added to it, existing properties from being removed, prevents changing the enumerability, configurability, or writability of existing properties, and prevents the values of existing properties from being changed. In addition, freezing an object also prevents its prototype from being changed. freeze() returns the same object that was passed in."
+  },
+  "ObjectFromEntries": {
+    "prefix": "Ofe",
+    "body": "Object.fromEntries(${0:entries})",
+    "description": "The \"Object.fromEntries()\" method transforms a list of key-value pairs into an object."
+  },
+  "ObjectGetOwnPropertyDescriptor": {
+    "prefix": "Ogopd",
+    "body": "Object.getOwnPropertyDescriptor(${1:obj}, ${0:propertyKey})",
+    "description": "The \"Object.getOwnPropertyDescriptor()\" method returns a property descriptor for an own property (that is, one directly present on an object and not in the object's prototype chain) of a given object."
+  },
+  "ObjectGetOwnPropertyDescriptors": {
+    "prefix": "Ogopds",
+    "body": "Object.getOwnPropertyDescriptor(${0:obj})",
+    "description": "The \"Object.getOwnPropertyDescriptors()\" method returns all own property descriptors of a given object."
+  },
+  "ObjectGetOwnPropertySymbols": {
+    "prefix": "Ogops",
+    "body": "Object.getOwnPropertySymbols(${0:obj})",
+    "description": "The \"Object.getOwnPropertySymbols()\" method returns an array of all symbol properties found directly upon a given object."
+  },
+  "ObjectGetPrototypeOf": {
+    "prefix": "Ogpo",
+    "body": "Object.getPrototypeOf(${0:obj})",
+    "description": "The \"Object.getPrototypeOf()\" method returns the prototype (i.e. the value of the internal [[Prototype]] property) of the specified object."
+  },
+  "ObjectIs": {
+    "prefix": "Oi",
+    "body": "Object.is(${1:value1}, ${0:value2})",
+    "description": "The \"Object.is()\" method determines whether two values are the same value."
+  },
+  "ObjectIsExtensible": {
+    "prefix": "Oie",
+    "body": "Object.isExtensible(${0:obj})",
+    "description": "The \"Object.isExtensible()\" method determines if an object is extensible (whether it can have new properties added to it)."
+  },
+  "ObjectIsFrozen": {
+    "prefix": "Oif",
+    "body": "Object.isFrozen(${0:obj})",
+    "description": "The \"Object.isFrozen()\" determines if an object is frozen."
+  },
+  "ObjectIsSealed": {
+    "prefix": "Ois",
+    "body": "Object.isSealed(${0:obj})",
+    "description": "The \"Object.isSealed()\" method determines if an object is sealed."
+  },
+  "ObjectKeys": {
+    "prefix": "Ok",
+    "body": "Object.keys(${0:obj})",
+    "description": "The \"Object.keys()\" method returns an array of a given object's own property names, in the same order as we get with a normal loop."
+  },
+  "ObjectPreventExtensions": {
+    "prefix": "Ope",
+    "body": "Object.preventExtensions(${0:obj})",
+    "description": "The \"Object.preventExtensions()\" method prevents new properties from ever being added to an object (i.e. prevents future extensions to the object)."
+  },
+  "ObjectHasOwnProperty": {
+    "prefix": ".hasOwnProperty",
+    "body": ".hasOwnProperty(${0:propertyKey})",
+    "description": "The \"hasOwnProperty()\" method returns a boolean indicating whether the object has the specified property as its own property (as opposed to inheriting it)."
+  },
+  "ObjectIsPrototypeOf": {
+    "prefix": ".isPrototypeOf",
+    "body": ".isPrototypeOf(${0:obj})",
+    "description": "The \"isPrototypeOf()\" method checks if an object exists in another object's prototype chain."
+  },
+  "ObjectPropertyIsEnumerable": {
+    "prefix": ".propertyIsEnumerable",
+    "body": ".propertyIsEnumerable(${0:propertyKey})",
+    "description": "The \"propertyIsEnumerable()\" method returns a Boolean indicating whether the specified property is enumerable."
+  },
+  "ObjectValueOf": {
+    "prefix": ".valueOf",
+    "body": ".valueOf()",
+    "description": "The \"propertyIsEnumerable()\" method returns the primitive value of the specified object."
+  },
+  "ObjectSeal": {
+    "prefix": "Os",
+    "body": "Object.seal(${0:obj})",
+    "description": "The \"Object.seal()\" method seals an object, preventing new properties from being added to it and marking all existing properties as non-configurable. Values of present properties can still be changed as long as they are writable."
+  },
+  "ObjectValues": {
+    "prefix": "Ov",
+    "body": "Object.values(${0:obj})",
+    "description": "The \"Object.setPrototypeOf()\" method returns an array of a given object's own enumerable property values, in the same order as that provided by a \"for...in\" loop (the difference being that a for-in loop enumerates properties in the prototype chain as well)."
   }
 }
