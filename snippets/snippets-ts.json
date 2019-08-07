@@ -1342,5 +1342,75 @@
     "prefix": "kv",
     "body": "${1:key}: ${0:value}",
     "description": "key value pair"
+  },
+  "EslintDisableAll": {
+    "prefix": "elda",
+    "body": "/* eslint-disable */",
+    "description": "Disable all rules for the rest of the file"
+  },
+  "EslintEnableAll": {
+    "prefix": "elea",
+    "body": "/* eslint-enable */",
+    "description": "Enable all rules for the rest of the file"
+  },
+  "EslintDisableRules": {
+    "prefix": "eldr",
+    "body": "/* eslint-disable ${0:rule} */",
+    "description": "Disable the listed rules for the rest of the file"
+  },
+  "EslintEnableRules": {
+    "prefix": "eler",
+    "body": "/* eslint-enable ${0:rule} */",
+    "description": "Enable the listed rules for the rest of the file"
+  },
+  "EslintDisableLine": {
+    "prefix": "eldl",
+    "body": "// eslint-disable-line",
+    "description": "Disables all rules for the current line"
+  },
+  "EslintEnableLine": {
+    "prefix": "elel",
+    "body": "// eslint-enable-line",
+    "description": "Enables all rules for the current line"
+  },
+  "EslintDisableLineRules": {
+    "prefix": "eldlr",
+    "body": "// eslint-disable-line ${0:rule}",
+    "description": "Disables the listed rules for the current line"
+  },
+  "EslintEnableLineRules": {
+    "prefix": "elelr",
+    "body": "// eslint-enable-line ${0:rule}",
+    "description": "Enables the listed rules for the current line"
+  },
+  "EslintDisableNextLine": {
+    "prefix": "eldnl",
+    "body": "// eslint-disable-next-line",
+    "description": "Disables all rules for the following line"
+  },
+  "EslintEnableNextLine": {
+    "prefix": "elenl",
+    "body": "// eslint-enable-next-line",
+    "description": "Enables all rules for the following line"
+  },
+  "EslintDisableNextLineRules": {
+    "prefix": "eldnlr",
+    "body": "// eslint-disable-next-line ${0:rule}",
+    "description": "Disables the listed rules for the following line"
+  },
+  "EslintEnableNextLineRules": {
+    "prefix": "elenlr",
+    "body": "// eslint-enable-next-line ${0:rule}",
+    "description": "Enables the listed rules for the following line"
+  },
+  "Jest Describe": {
+    "prefix": "dsc",
+    "body": ["describe('${1:describe}', () => {", "\t$0", "})"],
+    "description": "Creates a block that groups together several related tests in one 'test suite'"
+  },
+  "Jest It": {
+    "prefix": "it",
+    "body": ["it('${1:describe}', () => {", "\t$0", "}${2:, ${3:timeout}})"],
+    "description": "creates a test suite"
   }
 }

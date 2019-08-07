@@ -51,6 +51,22 @@
       {
         "language": "typescriptreact",
         "path": "./snippets/snippets-ts.json"
+      },
+      {
+        "language": "css",
+        "path": "./snippets/snippets-style.json"
+      },
+      {
+        "language": "scss",
+        "path": "./snippets/snippets-style.json"
+      },
+      {
+        "language": "less",
+        "path": "./snippets/snippets-style.json"
+      },
+      {
+        "language": "stylus",
+        "path": "./snippets/snippets-style.json"
       }
     ]
   },
