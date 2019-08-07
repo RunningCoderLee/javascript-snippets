@@ -117,7 +117,7 @@
   "ValueOf": {
     "prefix": ".valueOf",
     "body": ".valueOf()",
-    "description": "The \"valueOf()\" method returns the primitive value of the specified object.\n\nThe \"valueOf()\" method returns the primitive value of a String object."
+    "description": "The \"arrayInstance.valueOf()\" method returns the primitive value of the specified object.\n\nThe \"stringInstance.valueOf()\" method returns the primitive value of a String object.\n\nThe \"numberInstance.valueOf()\" method returns the wrapped primitive value of a Number object."
   },
   "ArrayFrom": {
     "prefix": "Af",
@@ -488,5 +488,60 @@
     "prefix": "Sr",
     "body": "String.raw${1:(${2:callSite}, ${0:substitutions})}",
     "description": "The \"trimStart()\" method removes whitespace from the beginning of a string. trimLeft() is an alias of this method."
+  },
+  "NumberIsFinite": {
+    "prefix": "Nif",
+    "body": "Number.isFinite(${0:number})",
+    "description": "The \"Number.isFinite()\" method determines whether the passed value is a finite number."
+  },
+  "NumberIsInteger": {
+    "prefix": "Nii",
+    "body": "Number.isInteger(${0:number})",
+    "description": "The \"Number.isInteger()\" method determines whether the passed value is an integer."
+  },
+  "NumberIsNaN": {
+    "prefix": "Nin",
+    "body": "Number.isNaN(${0:number})",
+    "description": "The \"Number.isNaN()\" method determines whether the passed value is NaN and its type is Number. It is a more robust version of the original, global isNaN()."
+  },
+  "NumberIsSafeInteger": {
+    "prefix": "Nisi",
+    "body": "Number.isSafeInteger(${0:number})",
+    "description": "The \"Number.isSafeInteger()\" method determines whether the provided value is a number that is a safe integer."
+  },
+  "NumberParseFloat": {
+    "prefix": "Npf",
+    "body": "Number.parseFloat(${0:string})",
+    "description": "The \"Number.parseFloat()\" method parses a string argument and returns a floating point number."
+  },
+  "NumberParseInt": {
+    "prefix": "Npi",
+    "body": "Number.parseInt(${1:string}${2:, ${0:radix}})",
+    "description": "The \"Number.parseInt()\" method parses a string argument and returns an integer of the specified radix or base."
+  },
+  "NumberToExponential": {
+    "prefix": ".toExponential",
+    "body": ".toExponential(${0:fractionDigits})",
+    "description": "The \"toExponential()\" method returns a string representing the Number object in exponential notation."
+  },
+  "NumberToFixed": {
+    "prefix": ".toFixed",
+    "body": ".toFixed(${0:fractionDigits})",
+    "description": "The \"toFixed()\" method formats a number using fixed-point notation."
+  },
+  "NumberToLocaleString": {
+    "prefix": ".toLocaleString",
+    "body": ".toLocaleString(${1:${2:locales}${3:, {$0\\}}})",
+    "description": "The \"toLocaleString()\" method returns a string with a language-sensitive representation of this number."
+  },
+  "NumberToPrecision": {
+    "prefix": ".toPrecision",
+    "body": ".toPrecision(${0:precision})",
+    "description": "The \"toPrecision()\" method formats a number using fixed-point notation."
+  },
+  "NumberToString": {
+    "prefix": ".toString",
+    "body": ".toString(${0:radix})",
+    "description": "The \"toString()\" method returns a string representing the specified Number object."
   }
 }
