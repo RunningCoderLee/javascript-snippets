@@ -114,6 +114,11 @@
     "body": ".slice(${1:${2:start}${3:, ${0:end}}})",
     "description": "The \"arrayInstance.slice()\" method returns a shallow copy of a portion of an array into a new array object selected from begin to end (end not included) where begin and end represent the index of items in that array. The original array will not be modified.\n\nThe \"stringInstance.slice()\" method extracts a section of a string and returns it as a new string, without modifying the original string."
   },
+  "ToString": {
+    "prefix": ".toString",
+    "body": ".toString(${1:radix})",
+    "description": "The \"numberInstance.toString()\" method returns a string representing the specified Number object.\nThe \"functionInstance.toString()\" method returns a string representing the source code of the function.\nThe \"dateInstance.toString()\" method returns a string representing the specified Date object."
+  },
   "ValueOf": {
     "prefix": ".valueOf",
     "body": ".valueOf()",
@@ -539,11 +544,6 @@
     "body": ".toPrecision(${0:precision})",
     "description": "The \"toPrecision()\" method formats a number using fixed-point notation."
   },
-  "NumberToString": {
-    "prefix": ".toString",
-    "body": ".toString(${0:radix})",
-    "description": "The \"toString()\" method returns a string representing the specified Number object."
-  },
   "FunctionApply": {
     "prefix": ".apply",
     "body": ".apply(${1:this}${2:, ${0:args}})",
@@ -559,9 +559,224 @@
     "body": ".call(${1:this}${2:, ${0:args}})",
     "description": "The \"call()\" method calls a function with a given this value and arguments provided individually."
   },
-  "FunctionToString": {
-    "prefix": ".toString",
-    "body": ".toString()",
-    "description": "The \"toString()\" method returns a string representing the source code of the function."
+  "DateUTC": {
+    "prefix": "Du",
+    "body": "Date.UTC(${1:year}, ${2:month}${3:, ${4:day}${5:, ${6:hours}${7:, ${8:minutes}${9:, ${10:seconds}${11:, ${0:ms}}}}}})",
+    "description": "The \"Date.UTC()\" method accepts parameters similar to the Date constructor, but treats them as UTC. It returns the number of milliseconds since January 1, 1970, 00:00:00 UTC."
+  },
+  "DateNow": {
+    "prefix": "Dn",
+    "body": "Date.now()",
+    "description": "The \"Date.UnowTC()\" method returns the number of milliseconds elapsed since January 1, 1970 00:00:00 UTC."
+  },
+  "DateParse": {
+    "prefix": "Dp",
+    "body": "Date.parse(${0:dateString})",
+    "description": "The \"Date.UnowTC()\" method parses a string representation of a date, and returns the number of milliseconds since January 1, 1970, 00:00:00 UTC or NaN if the string is unrecognized or, in some cases, contains illegal date values (e.g. 2015-02-31)."
+  },
+  "DateGetDate": {
+    "prefix": ".getDate",
+    "body": ".getDate()",
+    "description": "The \"getDate()\" method returns the day of the month for the specified date according to local time."
+  },
+  "DateGetDay": {
+    "prefix": ".getDay",
+    "body": ".getDay()",
+    "description": "The \"getDay()\" method returns the day of the week for the specified date according to local time, where 0 represents Sunday."
+  },
+  "DateGetFullYear": {
+    "prefix": ".getFullYear",
+    "body": ".getFullYear()",
+    "description": "The \"getFullYear()\" method returns the year of the specified date according to local time."
+  },
+  "DateGetFullHours": {
+    "prefix": ".getHours",
+    "body": ".getHours()",
+    "description": "The \"getHours()\" method returns the hour for the specified date, according to local time."
+  },
+  "DateGetMilliseconds": {
+    "prefix": ".getMilliseconds",
+    "body": ".getMilliseconds()",
+    "description": "The \"getMilliseconds()\" method returns the milliseconds in the specified date according to local time."
+  },
+  "DateGetMinutes": {
+    "prefix": ".getMinutes",
+    "body": ".getMinutes()",
+    "description": "The \"getMinutes()\" method returns the minutes in the specified date according to local time."
+  },
+  "DateGetMonth": {
+    "prefix": ".getMonth",
+    "body": ".getMonth()",
+    "description": "The \"getMonth()\" method returns the month in the specified date according to local time, as a zero-based value (where zero indicates the first month of the year)."
+  },
+  "DateGetSeconds": {
+    "prefix": ".getSeconds",
+    "body": ".getSeconds()",
+    "description": "The \"getSeconds()\" method returns the seconds in the specified date according to local time."
+  },
+  "DateGetTime": {
+    "prefix": ".getTime",
+    "body": ".getTime()",
+    "description": "The \"getTime()\" method returns the number of milliseconds* since the Unix Epoch."
+  },
+  "DateGetTimezoneOffset": {
+    "prefix": ".getTimezoneOffset",
+    "body": ".getTimezoneOffset()",
+    "description": "The \"getTimezoneOffset()\" method returns the time zone difference, in minutes, from current locale (host system settings) to UTC."
+  },
+  "DateGetUTCDate": {
+    "prefix": ".getUTCDate",
+    "body": ".getUTCDate()",
+    "description": "The \"getUTCDate()\" method returns the day (date) of the month in the specified date according to universal time."
+  },
+  "DateGetUTCDay": {
+    "prefix": ".getUTCDay",
+    "body": ".getUTCDay()",
+    "description": "The \"getUTCDay()\" method returns the day of the week in the specified date according to universal time, where 0 represents Sunday."
+  },
+  "DateGetUTCFullYear": {
+    "prefix": ".getUTCFullYear",
+    "body": ".getUTCFullYear()",
+    "description": "The \"getUTCFullYear()\" method returns the year in the specified date according to universal time."
+  },
+  "DateGetUTCHours": {
+    "prefix": ".getUTCHours",
+    "body": ".getUTCHours()",
+    "description": "The \"getUTCHours()\" method returns the hours in the specified date according to universal time."
+  },
+  "DateGetUTCMilliseconds": {
+    "prefix": ".getUTCMilliseconds",
+    "body": ".getUTCMilliseconds()",
+    "description": "The \"getUTCMilliseconds()\" method returns the milliseconds portion of the time object's value."
+  },
+  "DateGetUTCMinutes": {
+    "prefix": ".getUTCMinutes",
+    "body": ".getUTCMinutes()",
+    "description": "The \"getUTCMinutes()\" method returns the minutes in the specified date according to universal time."
+  },
+  "DateGetUTCMonth": {
+    "prefix": ".getUTCMonth",
+    "body": ".getUTCMonth()",
+    "description": "The \"getUTCMonth()\" method the month of the specified date according to universal time, as a zero-based value (where zero indicates the first month of the year)."
+  },
+  "DateGetUTCSeconds": {
+    "prefix": ".getUTCSeconds",
+    "body": ".getUTCSeconds()",
+    "description": "The \"getUTCSeconds()\" method returns the seconds in the specified date according to universal time."
+  },
+  "DateSetDate": {
+    "prefix": ".setDate",
+    "body": ".setDate(${0:date})",
+    "description": "The \"setDate()\" method sets the day of the Date object relative to the beginning of the currently set month."
+  },
+  "DateSetFullYear": {
+    "prefix": ".setFullYear",
+    "body": ".setFullYear(${1:year}${2:, ${3:month}${4:, ${0:day}}})",
+    "description": "The \"setFullYear()\" method sets the full year for a specified date according to local time. Returns new timestamp."
+  },
+  "DateSetHours": {
+    "prefix": ".setHours",
+    "body": ".setHours(${1:hours}${2:, ${3:minutes}${4:, ${5:seconds}${6:, ${0:milliseconds}}}})",
+    "description": "The \"setHours()\" method sets the hours for a specified date according to local time, and returns the number of milliseconds since January 1, 1970 00:00:00 UTC until the time represented by the updated Date instance."
+  },
+  "DateSetMilliseconds": {
+    "prefix": ".setMilliseconds",
+    "body": ".setMilliseconds(${0:})",
+    "description": "The \"setMilliseconds(milliseconds)\" method sets the milliseconds for a specified date according to local time."
+  },
+  "DateSetMinutes": {
+    "prefix": ".setMinutes",
+    "body": ".setMinutes(${1:minutes}${2:, ${3:seconds}${4:, ${0:milliseconds}}})",
+    "description": "The \"setMinutes()\" method sets the minutes for a specified date according to local time."
+  },
+  "DateSetMonth": {
+    "prefix": ".setMonth",
+    "body": ".setMonth(${1:month}${2:, ${0:date}})",
+    "description": "The \"setMonth()\" method sets the month for a specified date according to the currently set year."
+  },
+  "DateSetSeconds": {
+    "prefix": ".setSeconds",
+    "body": ".setSeconds(${1:seconds}${2:, ${0:milliseconds}})",
+    "description": "The \"setSeconds()\" method sets the seconds for a specified date according to local time."
+  },
+  "DateSetTime": {
+    "prefix": ".setTime",
+    "body": ".setTime(${0:time})",
+    "description": "The \"setTime()\" method sets the Date object to the time represented by a number of milliseconds since January 1, 1970, 00:00:00 UTC."
+  },
+  "DateSetUTCDate": {
+    "prefix": ".setUTCDate",
+    "body": ".setUTCDate(${0:date})",
+    "description": "The \"setUTCDate()\" method sets the day of the month for a specified date according to universal time."
+  },
+  "DateSetUTCFullYear": {
+    "prefix": ".setUTCFullYear",
+    "body": ".setUTCFullYear(${1:year}${2:, ${3:month}${4:, ${0:date}}})",
+    "description": "The \"setUTCFullYear()\" method sets the full year for a specified date according to universal time."
+  },
+  "DateSetUTCHours": {
+    "prefix": ".setUTCHours",
+    "body": ".setUTCHours(${1:hours}${2:, ${3:minutes}${4:, ${5:seconds}${6:, ${0:milliseconds}}}})",
+    "description": "The \"setUTCHours()\" method sets the hour for a specified date according to universal time, and returns the number of milliseconds since  January 1, 1970 00:00:00 UTC until the time represented by the updated Date instance."
+  },
+  "DateSetUTCMilliseconds": {
+    "prefix": ".setUTCMilliseconds",
+    "body": ".setUTCMilliseconds(${0:})",
+    "description": "The \"setUTCMilliseconds(milliseconds)\" method sets the milliseconds for a specified date according to universal time."
+  },
+  "DateSetUTCMinutes": {
+    "prefix": ".setUTCMinutes",
+    "body": ".setUTCMinutes(${1:minutes}${2:, ${3:seconds}${4:, ${0:milliseconds}}})",
+    "description": "The \"setUTCMinutes()\" method sets the minutes for a specified date according to universal time."
+  },
+  "DateSetUTCMonth": {
+    "prefix": ".setUTCMonth",
+    "body": ".setUTCMonth(${1:month}${2:, ${0:date}})",
+    "description": "The \"setUTCMonth()\" method sets the month for a specified date according to universal time."
+  },
+  "DateSetUTCSeconds": {
+    "prefix": ".setUTCSeconds",
+    "body": ".setUTCSeconds(${1:seconds}${2:, ${0:milliseconds}})",
+    "description": "The \"setUTCSeconds()\" method sets the seconds for a specified date according to universal time."
+  },
+  "DateToDateString": {
+    "prefix": ".toDateString",
+    "body": ".toDateString()",
+    "description": "The \"toDateString()\" method returns the date portion of a Date object in English in the following format separated by spaces:\n\n1. First three letters of the week day name\n\t2. First three letters of the month name\n\t3. Two digit day of the month, padded on the left a zero if necessary\n\t4. Four digit year (at least), padded on the left with zeros if necessary\n\nE.g. \"Thu Jan 01 1970\"."
+  },
+  "DateToISOString": {
+    "prefix": ".toISOString",
+    "body": ".toISOString()",
+    "description": "The \"toISOString()\" method returns a string in simplified extended ISO format (ISO 8601), which is always 24 or 27 characters long (\"YYYY-MM-DDTHH:mm:ss.sssZ\" or \"±YYYYYY-MM-DDTHH:mm:ss.sssZ\", respectively). The timezone is always zero UTC offset, as denoted by the suffix \"Z\"."
+  },
+  "DateToJSON": {
+    "prefix": ".toJSON",
+    "body": ".toJSON()",
+    "description": "The \"toJSON()\" method returns a string representation of the Date object."
+  },
+  "DateToLocaleDateString": {
+    "prefix": ".toLocaleDateString",
+    "body": ".toLocaleDateString(${1:${2:locales}${3:, {$0\\}}})",
+    "description": "The \"toLocaleDateString()\" method returns a string with a language sensitive representation of the date portion of this date. The new locales and options arguments let applications specify the language whose formatting conventions should be used and allow to customize the behavior of the function. In older implementations, which ignore the locales and options arguments, the locale used and the form of the string returned are entirely implementation dependent."
+  },
+  "DateToLocaleString": {
+    "prefix": ".toLocaleString",
+    "body": ".toLocaleString(${1:${2:locales}${3:, {$0\\}}})",
+    "description": "The \"toLocaleString()\" method returns a string with a language sensitive representation of this date. The new locales and options arguments let applications specify the language whose formatting conventions should be used and customize the behavior of the function. In older implementations, which ignore the locales and options arguments, the locale used and the form of the string returned are entirely implementation dependent."
+  },
+  "DateToLocaleTimeString": {
+    "prefix": ".toLocaleTimeString",
+    "body": ".toLocaleTimeString(${1:${2:locales}${3:, {$0\\}}})",
+    "description": "The \"toLocaleTimeString()\" method returns a string with a language sensitive representation of the time portion of this date. The new locales and options arguments let applications specify the language whose formatting conventions should be used and customize the behavior of the function. In older implementations, which ignore the locales and options arguments, the locale used and the form of the string returned are entirely implementation dependent."
+  },
+  "DateToTimeString": {
+    "prefix": ".toTimeString",
+    "body": ".toTimeString()",
+    "description": "The \"toTimeString()\" method returns the time portion of a Date object in human readable form in American English."
+  },
+  "DateToUTCString": {
+    "prefix": ".toUTCString",
+    "body": ".toUTCString()",
+    "description": "The \"toUTCString()\" method returns the time portion of a Date object in human readable form in American English."
   }
 }
