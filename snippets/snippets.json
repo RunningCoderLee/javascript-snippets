@@ -963,5 +963,384 @@
     "prefix": ".test",
     "body": ".test(${0:string})",
     "description": "The \"test()\" method executes a search for a match between a regular expression and a specified string. Returns true or false."
+  },
+  "JSONParse": {
+    "prefix": "Jp",
+    "body": "JSON.parse(${1:text}${2:, ${0:reviver}})",
+    "description": "The \"JSON.parse()\" method parses a JSON string, constructing the JavaScript value or object described by the string. An optional reviver function can be provided to perform a transformation on the resulting object before it is returned."
+  },
+  "JSONStringify": {
+    "prefix": "Js",
+    "body": "JSON.stringify(${1:value}${2:, ${3:replacer}${4:, ${0:space}}})",
+    "description": "The \"JSON.stringify()\" method converts a JavaScript object or value to a JSON string, optionally replacing values if a replacer function is specified or optionally including only the specified properties if a replacer array is specified."
+  },
+  "Class": {
+    "prefix": "cls",
+    "body": ["class ${1:Name} {", "\t$0", "}"],
+    "description": "Create a class."
+  },
+  "ClassExtend": {
+    "prefix": "clsx",
+    "body": [
+      "class ${1:Name} extends ${2:BaseClass} {",
+      "\tconstructor(${3:arguments}) {",
+      "\t\tsuper($3)",
+      "\t\t$0",
+      "\t}",
+      "}"
+    ],
+    "description": "Create a class that extended base class."
+  },
+  "Constructor": {
+    "prefix": "cstr",
+    "body": ["constructor(${1:arguments}) {", "${2:\tsuper(${1})}", "\t$0", "}"],
+    "description": "Constructor"
+  },
+  "Export": {
+    "prefix": "ep",
+    "body": "export ${0:member}",
+    "description": "Export individual features"
+  },
+  "ExportList": {
+    "prefix": "epl",
+    "body": "export { ${0:names} \\}",
+    "description": "Export list"
+  },
+  "ExportDefault": {
+    "prefix": "epd",
+    "body": "export default ${1:member}",
+    "description": "Export default module"
+  },
+  "ExportAggregating": {
+    "prefix": "epf",
+    "body": "export ${0:*} from '$1'",
+    "description": "Export aggregating modules"
+  },
+  "Import": {
+    "prefix": "ip",
+    "body": "import '$0'",
+    "description": "Import a module for its side effects only"
+  },
+  "ImportDefault": {
+    "prefix": "ipd",
+    "body": "import ${0:moduleName} from '$1'",
+    "description": "Importing defaults"
+  },
+  "ImportEntireModule": {
+    "prefix": "ipem",
+    "body": "import * as ${0:moduleName} from '$1'",
+    "description": "Import an entire module's contents"
+  },
+  "ImportMultipleExports": {
+    "prefix": "ipme",
+    "body": "import { $0 } from '$1'",
+    "description": "Import multiple exports from module"
+  },
+  "ImportDynamic": {
+    "prefix": "ipdn",
+    "body": ["import('$1').then((${2:module}) => {", "\t$0", "})"],
+    "description": "Dynamic Imports"
+  },
+  "Return": {
+    "prefix": "r",
+    "body": "return $0",
+    "description": "return"
+  },
+  "ReturnThis": {
+    "prefix": "rth",
+    "body": "return this",
+    "description": "return this"
+  },
+  "ReturnNull": {
+    "prefix": "rn",
+    "body": "return null",
+    "description": "return null"
+  },
+  "ReturnTrue": {
+    "prefix": "rt",
+    "body": "return true",
+    "description": "return true"
+  },
+  "ReturnFalse": {
+    "prefix": "rf",
+    "body": "return false",
+    "description": "return false"
+  },
+  "ReturnPromise": {
+    "prefix": "rp",
+    "body": ["return new Promise((resolve, reject) => {", "\t$0", "})"],
+    "description": "return new promise"
+  },
+  "ReturnPromiseReject": {
+    "prefix": "rpj",
+    "body": "return Promise.reject($0)",
+    "description": "return Promise.reject"
+  },
+  "ReturnPromiseResolve": {
+    "prefix": "rps",
+    "body": "return Promise.resolve($0)",
+    "description": "return Promise.resolve"
+  },
+  "NewPromise": {
+    "prefix": "np",
+    "body": ["new Promise((resolve, reject) => {", "\t$0", "})"],
+    "description": "New Promise"
+  },
+  "Then": {
+    "prefix": ".then",
+    "body": [".then((${2:value}) => {", "\t$0", "})"],
+    "description": "Promise.then"
+  },
+  "Catch": {
+    "prefix": ".catch",
+    "body": [".catch((${2:value}) => {", "\t$0", "})"],
+    "description": "Promise.catch"
+  },
+  "VarStatement": {
+    "prefix": "v",
+    "body": "var ${0:name}",
+    "description": "var statement"
+  },
+  "VarAssignment": {
+    "prefix": "v=",
+    "body": "var ${1:name} = ${0:value}",
+    "description": "var assignment"
+  },
+  "LetStatement": {
+    "prefix": "l",
+    "body": "let ${1:name}",
+    "description": "let statement"
+  },
+  "LetAssignment": {
+    "prefix": "l=",
+    "body": "let ${1:name} = ${2:value}",
+    "description": "let assignment"
+  },
+  "ConstStatement": {
+    "prefix": "co",
+    "body": "const ${1:name}",
+    "description": "const statement"
+  },
+  "ConstAssignment": {
+    "prefix": "co=",
+    "body": "const ${0:name} = ${1:value}",
+    "description": "const assignment"
+  },
+  "TernaryOperator": {
+    "prefix": "to",
+    "body": "${1:condition} ? ${2:value1} : ${3:value2}"
+  },
+  "ElseStatement": {
+    "prefix": "el",
+    "body": ["else {", "\t$0", "}"],
+    "description": "else statement"
+  },
+  "ElseIfStatement": {
+    "prefix": "ei",
+    "body": ["else if (${1:condition}) {", "\t$0", "}"],
+    "description": "else if statement"
+  },
+  "ForLoop": {
+    "prefix": "fl",
+    "body": ["for (let ${1:i} = 0, ${2:len} = ${3:iterable}.length; $1 < $2; $1++) {", "\t$0", "}"],
+    "description": "for loop"
+  },
+  "ForInLoop": {
+    "prefix": "fi",
+    "body": [
+      "for (let ${1:key} in ${2:source}) {",
+      "\tif (Object.hasOwnProperty.call(${2:source}, ${1:key})) {",
+      "\t\t$0",
+      "\t}",
+      "}"
+    ],
+    "description": "for in loop"
+  },
+  "ForOfLoop": {
+    "prefix": "fo",
+    "body": ["for (const ${2:key} of ${1:source}) {", "\t$0", "}"],
+    "description": "for of loop"
+  },
+  "whileLoop": {
+    "prefix": "wl",
+    "body": ["while (${1:condition}) {", "\t$0", "}"],
+    "description": "while loop"
+  },
+  "try/catch": {
+    "prefix": "tc",
+    "body": ["try {", "\t$0", "} catch (${1:err}) {", "\t", "}"],
+    "description": "try/catch"
+  },
+  "TryFinally": {
+    "prefix": "tf",
+    "body": ["try {", "\t$0", "} finally {", "\t", "}"],
+    "description": "try/finally"
+  },
+  "TryCatchFinally": {
+    "prefix": "tcf",
+    "body": ["try {", "\t$0", "} catch (${1:err}) {", "\t", "} finally {", "\t", "}"],
+    "description": "try/catch/finally"
+  },
+  "SwitchCase": {
+    "prefix": "sw",
+    "body": [
+      "switch (${1:expr}) {",
+      "\tcase ${2:value}:",
+      "\t\treturn $0",
+      "\tdefault:",
+      "\t\treturn",
+      "}"
+    ],
+    "description": "switch case"
+  },
+  "ArrowFunction": {
+    "prefix": "af",
+    "body": ["(${1:arguments}) => ${0:statement}"],
+    "description": "arrow function"
+  },
+  "ArrowFunctionWithBody": {
+    "prefix": "afb",
+    "body": ["(${1:arguments}) => {", "\t$0", "}"],
+    "description": "arrow function with body"
+  },
+  "AnonymousFunction": {
+    "prefix": "f",
+    "body": ["function(${1:arguments}) {$0}"],
+    "description": "anonymous function"
+  },
+  "NamedFunction": {
+    "prefix": "fn",
+    "body": ["function ${1:name}(${2:arguments}) {", "\t$0", "}"],
+    "description": "named function"
+  },
+  "ImmediatelyInvokedFunctionExpression": {
+    "prefix": "iife",
+    "body": ["(function(${1:arguments}) {", "\t$0", "})($2)"],
+    "description": "immediately-invoked function expression"
+  },
+  "Generator": {
+    "prefix": "gf",
+    "body": ["function* (${1:arguments}) {", "\t$0", "}"],
+    "description": "generator"
+  },
+  "NamedGenerator": {
+    "prefix": "gfn",
+    "body": ["function* ${1:name}(${2:arguments}) {", "\t$0", "}"],
+    "description": "named generator"
+  },
+  "UseStrict": {
+    "prefix": "us",
+    "body": "'use strict'",
+    "description": "use strict"
+  },
+  "Require": {
+    "prefix": "re",
+    "body": "require('${0:module}')",
+    "description": "require"
+  },
+  "ExportsMember": {
+    "prefix": "eps",
+    "body": "exports.${1:member} = ${0:value}",
+    "description": "exports.member"
+  },
+  "ModuleExports": {
+    "prefix": "meps",
+    "body": "module.exports = ${0:name}",
+    "description": "module.exports"
+  },
+  "SetTimeout": {
+    "prefix": "st",
+    "body": ["setTimeout(() => {", "\t$0", "}, ${1:delay})"],
+    "description": "SetTimeout"
+  },
+  "SetInterval": {
+    "prefix": "si",
+    "body": ["setInterval(() => {", "\t$0", "}, ${1:delay})"],
+    "description": "setInterval"
+  },
+  "SetImmediate": {
+    "prefix": "sim",
+    "body": ["setImmediate(() => {", "\t$0", "})"],
+    "description": "setImmediate"
+  },
+  "String": {
+    "prefix": "S",
+    "body": "String",
+    "description": "String"
+  },
+  "Number": {
+    "prefix": "N",
+    "body": "Number",
+    "description": "Number"
+  },
+  "Array": {
+    "prefix": "A",
+    "body": "Array",
+    "description": "Array"
+  },
+  "Date": {
+    "prefix": "D",
+    "body": "Date",
+    "description": "Date"
+  },
+  "RegExp": {
+    "prefix": "Rx",
+    "body": "RegExp",
+    "description": "RegExp"
+  },
+  "Math": {
+    "prefix": "M",
+    "body": "Math",
+    "description": "Math"
+  },
+  "TypeOf": {
+    "prefix": "tof",
+    "body": "typeof ${1:source} === '${2|undefined,object,boolean,number,bigint,string,symbol,function,object|}'",
+    "description": "Type of"
+  },
+  "InstanceOf": {
+    "prefix": "iof",
+    "body": "${1:source} instanceof ${0:Object}",
+    "description": "Instance of"
+  },
+  "AddEventListener": {
+    "prefix": ".addEventListener",
+    "body": ".addEventListener('${1:type}', ${2:listener}${3:, ${4:options}})",
+    "description": "The EventTarget method \"addEventListener()\" sets up a function that will be called whenever the specified event is delivered to the target. Common targets are Element, Document, and Window, but the target may be any object that supports events (such as XMLHttpRequest)."
+  },
+  "RemoveEventListener": {
+    "prefix": ".removeEventListener",
+    "body": ".removeEventListener('${1:type}', ${2:listener}${3:, ${4:options}})",
+    "description": "The EventTarget.removeEventListener() method removes from the EventTarget an event listener previously registered with EventTarget.addEventListener(). The event listener to be removed is identified using a combination of the event type, the event listener function itself, and various optional options that may affect the matching process; see Matching event listeners for removal"
+  },
+  "GetElementById ": {
+    "prefix": "gei",
+    "body": "document.getElementById('#${0:id}')",
+    "description": "The Document method getElementById() returns an Element object representing the element whose id property matches the specified string. Since element IDs are required to be unique if specified, they're a useful way to get access to a specific element quickly."
+  },
+  "GetElementsByClassName ": {
+    "prefix": "gec",
+    "body": "${1:document}.getElementsByClassName('${0:className}')",
+    "description": "The Element method getElementsByClassName() returns a live HTMLCollection which contains every descendant element which has the specified class name or names.\n\nThe method getElementsByClassName() on the Document interface works essentially the same way, except it acts on the entire document, starting at the document root."
+  },
+  "GetElementsByTagName ": {
+    "prefix": "get",
+    "body": "${1:document}.getElementsByTagName('${2:tag}')",
+    "description": "The Element.getElementsByTagName() method returns a live HTMLCollection of elements with the given tag name. All descendants of the specified element are searched, but not the element itself. The returned list is live, which means it updates itself with the DOM tree automatically. Therefore, there is no need to call Element.getElementsByTagName() with the same element and arguments repeatedly if the DOM changes in between calls."
+  },
+  "QuerySelector ": {
+    "prefix": "qs",
+    "body": ["${1:document}.querySelector('${2:selector}')"],
+    "description": "The querySelector() method of the Element interface returns the first element that is a descendant of the element on which it is invoked that matches the specified group of selectors."
+  },
+  "QuerySelectorAll ": {
+    "prefix": "qsa",
+    "body": "${1:document}.querySelectorAll('${2:selector}')",
+    "description": "The Element method querySelectorAll() returns a static (not live) NodeList representing a list of elements matching the specified group of selectors which are descendants of the element on which the method was called."
+  },
+  "Key/Value": {
+    "prefix": "kv",
+    "body": "${1:key}: ${0:value}",
+    "description": "key value pair"
   }
 }
