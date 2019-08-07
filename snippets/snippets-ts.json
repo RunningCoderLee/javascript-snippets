@@ -543,5 +543,25 @@
     "prefix": ".toString",
     "body": ".toString(${0:radix})",
     "description": "The \"toString()\" method returns a string representing the specified Number object."
+  },
+  "FunctionApply": {
+    "prefix": ".apply",
+    "body": ".apply(${1:this}${2:, ${0:args}})",
+    "description": "The \"apply()\" method calls a function with a given \"this\" value, and \"arguments\" provided as an array (or an array-like object)."
+  },
+  "FunctionBind": {
+    "prefix": ".bind",
+    "body": ".bind(${1:this}${2:, ${0:args}})",
+    "description": "The \"bind()\" method creates a new function that, when called, has its this keyword set to the provided value, with a given sequence of arguments preceding any provided when the new function is called."
+  },
+  "FunctionCall": {
+    "prefix": ".call",
+    "body": ".call(${1:this}${2:, ${0:args}})",
+    "description": "The \"call()\" method calls a function with a given this value and arguments provided individually."
+  },
+  "FunctionToString": {
+    "prefix": ".toString",
+    "body": ".toString()",
+    "description": "The \"toString()\" method returns a string representing the source code of the function."
   }
 }
