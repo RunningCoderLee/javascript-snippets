@@ -117,7 +117,7 @@
   "ToString": {
     "prefix": ".toString",
     "body": ".toString(${1:radix})",
-    "description": "The \"numberInstance.toString()\" method returns a string representing the specified Number object.\nThe \"functionInstance.toString()\" method returns a string representing the source code of the function.\nThe \"dateInstance.toString()\" method returns a string representing the specified Date object."
+    "description": "The \"numberInstance.toString()\" method returns a string representing the specified Number object.\nThe \"functionInstance.toString()\" method returns a string representing the source code of the function.\nThe \"dateInstance.toString()\" method returns a string representing the specified Date object.\nThe \"regExpInstance.toString()\" method returns a string representing the regular expression."
   },
   "ValueOf": {
     "prefix": ".valueOf",
@@ -953,5 +953,15 @@
     "prefix": "Mtrunc",
     "body": "Math.trunc(${0:x})",
     "description": "The \"Math.trunc()\" function returns the integer part of a number by removing any fractional digits."
+  },
+  "RegExpExec": {
+    "prefix": ".exec",
+    "body": ".exec(${0:string})",
+    "description": "The \"exec()\" method executes a search for a match in a specified string. Returns a result array, or null."
+  },
+  "RegExpTest": {
+    "prefix": ".test",
+    "body": ".test(${0:string})",
+    "description": "The \"test()\" method executes a search for a match between a regular expression and a specified string. Returns true or false."
   }
 }
