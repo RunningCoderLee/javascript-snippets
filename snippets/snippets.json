@@ -89,6 +89,36 @@
     "body": "console.warn(${1:message})",
     "description": "Outputs a warning message to the Web Console."
   },
+  "Concat": {
+    "prefix": ".concat",
+    "body": ".concat(${1:items})",
+    "description": "The \"arrayInstance.concat()\" method s used to merge two or more arrays. This method does not change the existing arrays, but instead returns a new array.\n\nThe \"stringInstance.concat()\" method concatenates the string arguments to the calling string and returns a new string."
+  },
+  "Includes": {
+    "prefix": ".includes",
+    "body": ".includes(${3:searchElement}${1:, ${2:fromIndex}})",
+    "description": "The \"arrayInstance.includes()\" method determines whether an array includes a certain value among its entries, returning true or false as appropriate.\n\nThe \"stringInstance.includes()\" method determines whether one string may be found within another string, returning true or false as appropriate."
+  },
+  "IndexOf": {
+    "prefix": ".indexOf",
+    "body": ".indexOf(${3:searchElement}${1:, ${2:fromIndex}})",
+    "description": "The \"arrayInstance.indexOf()\" method returns the first index at which a given element can be found in the array, or -1 if it is not present.\n\nThe \"stringInstance.indexOf()\" method returns the index within the calling String object of the first occurrence of the specified value, starting the search at fromIndex. Returns -1 if the value is not found."
+  },
+  "LastIndexOf": {
+    "prefix": ".lastIndexOf",
+    "body": ".lastIndexOf(${3:searchElement}${1:, ${2:fromIndex}})",
+    "description": "The \"arrayInstance.lastIndexOf()\" method returns the last index at which a given element can be found in the array, or -1 if it is not present. The array is searched backwards, starting at fromIndex.\n\nThe \"stringInstance.lastIndexOf()\" method returns the index within the calling String object of the last occurrence of the specified value, searching backwards from fromIndex. Returns -1 if the value is not found."
+  },
+  "Slice": {
+    "prefix": ".slice",
+    "body": ".slice(${1:${2:start}${3:, ${0:end}}})",
+    "description": "The \"arrayInstance.slice()\" method returns a shallow copy of a portion of an array into a new array object selected from begin to end (end not included) where begin and end represent the index of items in that array. The original array will not be modified.\n\nThe \"stringInstance.slice()\" method extracts a section of a string and returns it as a new string, without modifying the original string."
+  },
+  "ValueOf": {
+    "prefix": ".valueOf",
+    "body": ".valueOf()",
+    "description": "The \"valueOf()\" method returns the primitive value of the specified object.\n\nThe \"valueOf()\" method returns the primitive value of a String object."
+  },
   "ArrayFrom": {
     "prefix": "Af",
     "body": "Array.from(${1:arrayLike}${2:, ${0:mapFn}})",
@@ -104,14 +134,9 @@
     "body": "Array.of(${1:items})",
     "description": "The \"Array.of()\" method creates a new Array instance from a variable number of arguments, regardless of number or type of the arguments."
   },
-  "ArrayConcat": {
-    "prefix": ".concat",
-    "body": ".concat(${1:items})",
-    "description": "The \"concat()\" method s used to merge two or more arrays. This method does not change the existing arrays, but instead returns a new array."
-  },
   "ArrayCopyWithin": {
     "prefix": ".copyWithin",
-    "body": ".copyWithin(${1:target}${2:, ${3:start}${4:, ${5:end}}})",
+    "body": ".copyWithin(${1:target}${2:, ${3:start}${4:, ${0:end}}})",
     "description": "The \"copyWithin()\" method shallow copies part of an array to another location in the same array and returns it without modifying its length."
   },
   "ArrayEntries": {
@@ -126,7 +151,7 @@
   },
   "ArrayFill": {
     "prefix": ".fill",
-    "body": ".fill(${1:target}${2:, ${3:start}${4:, ${5:end}}})",
+    "body": ".fill(${1:target}${2:, ${3:start}${4:, ${0:end}}})",
     "description": "The \"fill()\" method fills (modifies) all the elements of an array from a start index (default zero) to an end index (default array length) with a static value. It returns the modified array."
   },
   "ArrayFilter": {
@@ -159,16 +184,6 @@
     "body": ".forEach(${1:(${2:value}${3:, ${4:index}${5:, ${6:array}}}) => {$0\\}})",
     "description": "The \"forEach()\" method executes a provided function once for each array element."
   },
-  "ArrayIncludes": {
-    "prefix": ".includes",
-    "body": ".includes(${3:searchElement}${1:, ${2:fromIndex}})",
-    "description": "The \"includes()\" method determines whether an array includes a certain value among its entries, returning true or false as appropriate."
-  },
-  "ArrayIndexOf": {
-    "prefix": ".indexOf",
-    "body": ".indexOf(${3:searchElement}${1:, ${2:fromIndex}})",
-    "description": "The \"indexOf()\" method returns the first index at which a given element can be found in the array, or -1 if it is not present."
-  },
   "ArrayJoin": {
     "prefix": ".join",
     "body": ".join(${1:separator})",
@@ -178,11 +193,6 @@
     "prefix": ".keys",
     "body": ".keys()",
     "description": "The \"keys()\" method returns a new Array Iterator object that contains the keys for each index in the array."
-  },
-  "ArrayLastIndexOf": {
-    "prefix": ".lastIndexOf",
-    "body": ".lastIndexOf(${3:searchElement}${1:, ${2:fromIndex}})",
-    "description": "The \"lastIndexOf()\" method returns the last index at which a given element can be found in the array, or -1 if it is not present. The array is searched backwards, starting at fromIndex."
   },
   "ArrayMap": {
     "prefix": ".map",
@@ -219,11 +229,6 @@
     "body": ".shift()",
     "description": "The \"shift()\" method removes the first element from an array and returns that removed element. This method changes the length of the array."
   },
-  "ArraySlice": {
-    "prefix": ".slice",
-    "body": ".slice(${1:${2:start}${3:, ${4:end}}})",
-    "description": "The \"slice()\" method returns a shallow copy of a portion of an array into a new array object selected from begin to end (end not included) where begin and end represent the index of items in that array. The original array will not be modified."
-  },
   "ArraySome": {
     "prefix": ".some",
     "body": ".some(${1:(${2:value}${3:, ${4:index}${5:, ${6:array}}}) => {$0\\}})",
@@ -233,11 +238,6 @@
     "prefix": ".sort",
     "body": ".sort(${1:(${2:a}, ${3:b}) => {$0\\}})",
     "description": "The \"sort()\" method sorts the elements of an array in place and returns the sorted array. The default sort order is built upon converting the elements into strings, then comparing their sequences of UTF-16 code units values."
-  },
-  "ArraySplice": {
-    "prefix": ".splice",
-    "body": ".splice(${1:start}${2:, ${3:deleteCount}${4:, ${0:items}}})",
-    "description": "The \"splice()\" method changes the contents of an array by removing or replacing existing elements and/or adding new elements in place."
   },
   "ArrayUnshift": {
     "prefix": ".unshift",
@@ -349,11 +349,6 @@
     "body": ".propertyIsEnumerable(${0:propertyKey})",
     "description": "The \"propertyIsEnumerable()\" method returns a Boolean indicating whether the specified property is enumerable."
   },
-  "ObjectValueOf": {
-    "prefix": ".valueOf",
-    "body": ".valueOf()",
-    "description": "The \"propertyIsEnumerable()\" method returns the primitive value of the specified object."
-  },
   "ObjectSeal": {
     "prefix": "Os",
     "body": "Object.seal(${0:obj})",
@@ -363,5 +358,135 @@
     "prefix": "Ov",
     "body": "Object.values(${0:obj})",
     "description": "The \"Object.setPrototypeOf()\" method returns an array of a given object's own enumerable property values, in the same order as that provided by a \"for...in\" loop (the difference being that a for-in loop enumerates properties in the prototype chain as well)."
+  },
+  "StringFromCharCode": {
+    "prefix": "Sfcc",
+    "body": "String.fromCharCode(${0:codes})",
+    "description": "The static \"String.fromCharCode()\" method returns a string created from the specified sequence of UTF-16 code units."
+  },
+  "StringFromCodePoint": {
+    "prefix": "Sfcp",
+    "body": "String.fromCodePoint(${0:codePoints})",
+    "description": "The static \"String.fromCodePoint()\" method returns a string created by using the specified sequence of code points."
+  },
+  "StringCharAt": {
+    "prefix": ".charAt",
+    "body": ".charAt(${0:index})",
+    "description": "The \"String\" object's \"charAt()\" method returns a new string consisting of the single UTF-16 code unit located at the specified offset into the string."
+  },
+  "StringCharCodeAt": {
+    "prefix": ".charCodeAt",
+    "body": ".charCodeAt(${0:index})",
+    "description": "The \"charCodeAt()\" method returns an integer between 0 and 65535 representing the UTF-16 code unit at the given index."
+  },
+  "StringCodePointAt": {
+    "prefix": ".codePointAt",
+    "body": ".codePointAt(${0:index})",
+    "description": "The \"codePointAt()\" method returns a non-negative integer that is the Unicode code point value."
+  },
+  "StringEndsWith": {
+    "prefix": ".endsWith",
+    "body": ".endsWith(${1:searchString}${2:, ${0:endPosition}})",
+    "description": "The \"endsWith()\" method determines whether a string ends with the characters of a specified string, returning \"true\" or \"false\" as appropriate."
+  },
+  "StringLocaleCompare": {
+    "prefix": ".localeCompare",
+    "body": ".localeCompare(${1:compareString}${2:, ${3:locales}${4:, {$0\\}}})",
+    "description": "The \"localeCompare()\" method returns a number indicating whether a reference string comes before or after or is the same as the given string in sort order."
+  },
+  "StringMatch": {
+    "prefix": ".match",
+    "body": ".match(${0:regexp})",
+    "description": "The \"match()\" method retrieves the result of matching a string against a regular expression."
+  },
+  "StringMatchAll": {
+    "prefix": ".matchAll",
+    "body": ".matchAll(${0:regexp})",
+    "description": "The \"matchAll()\" method returns an iterator of all results matching a string against a regular expression, including capturing groups."
+  },
+  "StringNormalize": {
+    "prefix": ".normalize",
+    "body": ".normalize(${0:form})",
+    "description": "The \"normalize()\" method returns the Unicode Normalization Form of a given string (if the value isn't a string, it will be converted to one first)."
+  },
+  "StringPadEnd": {
+    "prefix": ".padEnd",
+    "body": ".padEnd(${1:maxLength}${2:, ${0:fillString}})",
+    "description": "The \"padEnd()\" method pads the current string with a given string (repeated, if needed) so that the resulting string reaches a given length. The padding is applied from the end of the current string."
+  },
+  "StringPadStart": {
+    "prefix": ".padStart",
+    "body": ".padStart(${1:maxLength}${2:, ${0:fillString}})",
+    "description": "The \"padStart()\" method pads the current string with another string (multiple times, if needed) until the resulting string reaches the given length. The padding is applied from the start of the current string."
+  },
+  "StringRepeat": {
+    "prefix": ".repeat",
+    "body": ".repeat(${0:count})",
+    "description": "The \"repeat()\" method constructs and returns a new string which contains the specified number of copies of the string on which it was called, concatenated together."
+  },
+  "StringReplace": {
+    "prefix": ".replace",
+    "body": ".replace(${1:subStringOrRegexp}, ${0:newSubstringOrReplacer})",
+    "description": "The \"replace()\" method returns a new string with some or all matches of a pattern replaced by a replacement. The pattern can be a string or a RegExp, and the replacement can be a string or a function to be called for each match. If pattern is a string, only the first occurrence will be replaced."
+  },
+  "StringSearch": {
+    "prefix": ".search",
+    "body": ".search(${1:searcher})",
+    "description": "The \"search()\" method executes a search for a match between a regular expression and this String object."
+  },
+  "StringSplit": {
+    "prefix": ".split",
+    "body": ".split(${1:splitter}${2:, ${0:limit}})",
+    "description": "The \"split()\" method splits a String object into an array of strings by separating the string into substrings, using a specified separator string to determine where to make each split."
+  },
+  "StringStartsWith": {
+    "prefix": ".startsWith",
+    "body": ".startsWith(${1:searchString}${2:, ${0:position}})",
+    "description": "The \"startsWith()\" method determines whether a string begins with the characters of a specified string, returning true or false as appropriate."
+  },
+  "StringSubstring": {
+    "prefix": ".substring",
+    "body": ".substring(${1:${2:start}${3:, ${0:end}}})",
+    "description": "The \"substring()\" method returns the part of the string between the start and end indexes, or to the end of the string."
+  },
+  "StringToLocaleLowerCase": {
+    "prefix": ".toLocaleLowerCase",
+    "body": ".toLocaleLowerCase()",
+    "description": "The \"toLocaleLowerCase()\" method returns the calling string value converted to lower case, according to any locale-specific case mappings."
+  },
+  "StringToLocaleUpperCase": {
+    "prefix": ".toLocaleUpperCase",
+    "body": ".toLocaleUpperCase()",
+    "description": "The \"toLocaleUpperCase()\" method returns the calling string value converted to upper case, according to any locale-specific case mappings."
+  },
+  "StringToLowerCase": {
+    "prefix": ".toLowerCase",
+    "body": ".toLowerCase()",
+    "description": "The \"toLowerCase()\" method returns the calling string value converted to lower case."
+  },
+  "StringToUpperCase": {
+    "prefix": ".toUpperCase",
+    "body": ".toUpperCase()",
+    "description": "The \"toUpperCase()\" method returns the calling string value converted to uppercase (the value will be converted to a string if it isn't one)."
+  },
+  "StringTrim": {
+    "prefix": ".trim",
+    "body": ".trim()",
+    "description": "The \"trim()\" method removes whitespace from both ends of a string. Whitespace in this context is all the whitespace characters (space, tab, no-break space, etc.) and all the line terminator characters (LF, CR, etc.)."
+  },
+  "StringTrimEnd": {
+    "prefix": ".trimEnd",
+    "body": ".trimEnd()",
+    "description": "The \"trimEnd()\" method removes whitespace from the end of a string. trimRight() is an alias of this method."
+  },
+  "StringTrimStart": {
+    "prefix": ".trimStart",
+    "body": ".trimStart()",
+    "description": "The \"trimStart()\" method removes whitespace from the beginning of a string. trimLeft() is an alias of this method."
+  },
+  "StringRaw": {
+    "prefix": "Sr",
+    "body": "String.raw${1:(${2:callSite}, ${0:substitutions})}",
+    "description": "The \"trimStart()\" method removes whitespace from the beginning of a string. trimLeft() is an alias of this method."
   }
 }
