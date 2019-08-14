@@ -3,7 +3,7 @@
   "displayName": "js snippets",
   "description": "A set of snippets for JavaScript",
   "icon": "images/js-snippets.png",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "engines": {
     "vscode": "^1.30.0"
   },
