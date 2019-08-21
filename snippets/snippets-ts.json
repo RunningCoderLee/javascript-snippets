@@ -1295,7 +1295,7 @@
   },
   "TypeOf": {
     "prefix": "tof",
-    "body": "typeof ${1:source} === '${2|undefined,object,boolean,number,bigint,string,symbol,function,object|}'",
+    "body": "typeof ${1:source} ${2|===,!==|} '${3|undefined,object,boolean,number,bigint,string,symbol,function,object|}'",
     "description": "Type of"
   },
   "InstanceOf": {
