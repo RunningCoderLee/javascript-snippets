@@ -1195,7 +1195,7 @@
   },
   "ArrowFunction": {
     "prefix": "af",
-    "body": ["(${1:arguments}) => ${0:statement}"],
+    "body": ["(${1:arguments}) => ${2:statement}"],
     "description": "arrow function"
   },
   "ArrowFunctionWithBody": {
