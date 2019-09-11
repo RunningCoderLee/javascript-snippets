@@ -1118,12 +1118,12 @@
   },
   "ConstStatement": {
     "prefix": "co",
-    "body": "const ${1:name}",
+    "body": "const ${0:name}",
     "description": "const statement"
   },
   "ConstAssignment": {
     "prefix": "co=",
-    "body": "const ${0:name} = ${1:value}",
+    "body": "const ${1:name} = ${0:value}",
     "description": "const assignment"
   },
   "TernaryOperator": {
@@ -1195,7 +1195,7 @@
   },
   "ArrowFunction": {
     "prefix": "af",
-    "body": ["(${1:arguments}) => ${0:statement}"],
+    "body": ["(${1:arguments}) => ${2:statement}"],
     "description": "arrow function"
   },
   "ArrowFunctionWithBody": {
