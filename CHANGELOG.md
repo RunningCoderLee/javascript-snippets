@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.5](https://github.com/RunningCoderLee/javascript-snippets/compare/v0.2.4...v0.2.5) (2019-09-23)
+
+
+### 🐛 Bug Fixes
+
+* adjust declare constant variable ([e1bb6fa](https://github.com/RunningCoderLee/javascript-snippets/commit/e1bb6fa))
+
 ### [0.2.4](https://github.com/RunningCoderLee/javascript-snippets/compare/v0.2.3...v0.2.4) (2019-09-11)
 
 
