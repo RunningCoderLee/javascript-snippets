@@ -1123,7 +1123,7 @@
   },
   "ConstAssignment": {
     "prefix": "co=",
-    "body": "const ${1:name} = ${0:value}",
+    "body": "const ${1:name} = ${2:value}",
     "description": "const assignment"
   },
   "TernaryOperator": {
